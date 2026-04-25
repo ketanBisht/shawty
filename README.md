@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Shawty - URL Shortener
+
+A high-performance URL shortener built with Next.js, Prisma, and Tailwind CSS. Hosted on Vercel.
+
+## Features
+- **Lightning Fast Redirects**: Caching strategy designed for high-scale environments.
+- **Custom Aliases**: Claim your own custom short URLs (e.g., `shawty.vercel.app/my-link`).
+- **Deduplication**: Automatically detects if a long URL has already been shortened and prevents duplicate entries in the database.
+- **Modern UI**: A beautiful, glassmorphism-inspired UI with smooth animations.
 
 ## Getting Started
 
-First, run the development server:
+First, make sure you have linked a PostgreSQL database (like Vercel Postgres or Supabase). Set your database URL in `.env`:
+```
+DATABASE_URL="postgres://user:password@host/database"
+```
+
+Next, sync the Prisma schema and run the development server:
 
 ```bash
+# Install dependencies
+npm install
+
+# Push schema to Postgres
+npx prisma db push
+
+# Start Next.js
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment on Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is configured to be deployed on Vercel. Ensure you add your `DATABASE_URL` to your Vercel Environment Variables before deploying!

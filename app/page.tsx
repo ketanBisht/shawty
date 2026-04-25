@@ -80,7 +80,7 @@ export default function Home() {
             </label>
             <div className="flex">
               <span className="inline-flex items-center px-4 rounded-l-xl bg-black/50 border border-r-0 border-white/10 text-white/50 text-sm">
-                shawty.com/
+                shawty.vercel.app/
               </span>
               <input
                 id="customAlias"
