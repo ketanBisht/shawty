@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Home() {
   const [longUrl, setLongUrl] = useState("");
@@ -60,7 +61,22 @@ export default function Home() {
         <div className="hidden sm:block absolute -top-4 -right-4 w-12 h-12 bg-pink-400 border-4 border-black rounded-full" />
         <div className="hidden sm:block absolute -bottom-4 -left-4 w-8 h-8 bg-cyan-400 border-4 border-black" />
 
-        <div className="text-center mb-8 sm:mb-10">
+        <div className="text-center mb-8 sm:mb-10 flex flex-col items-center">
+          <motion.div
+            initial={{ scale: 0, rotate: -45 }}
+            animate={{ scale: 1, rotate: 0 }}
+            transition={{ type: "spring", stiffness: 300, damping: 15 }}
+            className="mb-4 bg-white border-4 border-black rounded-2xl p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+          >
+            <Image 
+              src="/icon.svg" 
+              alt="Shawty Logo" 
+              width={80} 
+              height={80} 
+              className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+            />
+          </motion.div>
+          
           <motion.h1 
             className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter mb-3 sm:mb-4"
             initial={{ scale: 0.9 }}
